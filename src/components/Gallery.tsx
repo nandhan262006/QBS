@@ -1,10 +1,11 @@
+import Image from "next/image";
 import { Camera } from "lucide-react";
 
 const images = [
-  "/placeholder1.jpg",
-  "/placeholder2.jpg",
-  "/placeholder3.jpg",
-  "/placeholder4.jpg",
+  { src: "/homepagelaptop2.png", alt: "QBS Salon Gallery" },
+  { src: "/homepagelaptop.png", alt: "QBS Salon Gallery" },
+  { src: "/labdipet.png", alt: "QBS Salon Labbipet" },
+  { src: "/benzcircle.png", alt: "QBS Salon Benz Circle" },
 ];
 
 export default function Gallery() {
@@ -21,7 +22,7 @@ export default function Gallery() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {images.map((src, i) => (
+          {images.map((img, i) => (
             <a
               key={i}
               href="https://www.instagram.com/qbssalon_official/"
@@ -29,6 +30,13 @@ export default function Gallery() {
               rel="noopener noreferrer"
               className="group relative aspect-square rounded-2xl overflow-hidden bg-gray-100"
             >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
                 <Camera className="w-6 h-6 text-white" />
               </div>
