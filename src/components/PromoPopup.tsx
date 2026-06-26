@@ -16,6 +16,9 @@ export default function PromoPopup() {
   const [show, setShow] = useState(false);
   const [step, setStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [branch, setBranch] = useState("");
 
   useEffect(() => {
     try {
@@ -38,6 +41,8 @@ export default function PromoPopup() {
   const handleBook = (e: React.FormEvent) => {
     e.preventDefault();
     sessionStorage.setItem("promoShown", "true");
+    const text = `Hi QBS Salon, I want to book an appointment with 20%% OFF.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ABranch: ${encodeURIComponent(branch)}`;
+    window.open(`https://wa.me/919848609996?text=${text}`, "_blank");
     setSubmitted(true);
     setTimeout(() => setShow(false), 3000);
   };
@@ -149,6 +154,8 @@ export default function PromoPopup() {
                 <input
                   type="tel"
                   placeholder="Phone Number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   required
                   className="w-full border border-gray-200 rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:border-[#8B5CF6] focus:ring-2 focus:ring-[#8B5CF6]/10 transition-all"
                 />
@@ -170,6 +177,8 @@ export default function PromoPopup() {
                 <input
                   type="text"
                   placeholder="Your Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   required
                   className="w-full border border-gray-200 rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:border-[#8B5CF6] focus:ring-2 focus:ring-[#8B5CF6]/10 transition-all"
                 />
@@ -177,6 +186,8 @@ export default function PromoPopup() {
               <div className="relative">
                 <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
                 <select
+                  value={branch}
+                  onChange={(e) => setBranch(e.target.value)}
                   required
                   className="w-full border border-gray-200 rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:border-[#8B5CF6] focus:ring-2 focus:ring-[#8B5CF6]/10 transition-all text-gray-600 appearance-none bg-white"
                 >
