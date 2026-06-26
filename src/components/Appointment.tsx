@@ -3,6 +3,15 @@
 import { useState } from "react";
 import { MapPin, Phone, Mail, Calendar, Store } from "lucide-react";
 
+const branches = [
+  "Vijayawada - Labbipet",
+  "Vijayawada - Benz Circle",
+  "Nandigama",
+  "Vijayawada - One Town",
+  "Kandukur",
+  "Madinaguda",
+];
+
 export default function Appointment() {
   const [tab, setTab] = useState<"appointment" | "franchise">("appointment");
 
@@ -124,6 +133,18 @@ export default function Appointment() {
                   type="date"
                   className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#8B5CF6] [color-scheme:dark]"
                 />
+                <div>
+                  <select className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#8B5CF6]">
+                    <option value="" className="bg-[#2D1B4E]">
+                      Select Branch
+                    </option>
+                    {branches.map((b) => (
+                      <option key={b} value={b} className="bg-[#2D1B4E]">
+                        {b}
+                      </option>
+                    ))}
+                  </select>
+                </div>
                 <button
                   type="submit"
                   className="w-full bg-[#8B5CF6] text-white font-semibold px-8 py-3.5 rounded-xl text-sm hover:bg-[#7C3AED] transition-colors"
