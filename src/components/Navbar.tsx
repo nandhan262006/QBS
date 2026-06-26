@@ -17,12 +17,12 @@ const navLinks = [
     ],
   },
   { label: "Gallery", href: "/gallery" },
+  { label: "Locations", href: "/locations" },
   { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
@@ -35,17 +35,12 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) =>
               link.children ? (
-                <div
-                  key={link.label}
-                  className="relative group"
-                  onMouseEnter={() => setDropdown(true)}
-                  onMouseLeave={() => setDropdown(false)}
-                >
+                <div key={link.label} className="relative group">
                   <button className="text-sm font-medium text-gray-700 hover:text-[#8B5CF6] transition-colors">
                     {link.label}
                   </button>
-                  {dropdown && (
-                    <div className="absolute top-full left-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-2">
+                  <div className="absolute top-full left-0 pt-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200">
+                    <div className="w-40 bg-white rounded-lg shadow-lg border border-gray-100 py-2">
                       {link.children.map((child) => (
                         <Link
                           key={child.label}
@@ -56,7 +51,7 @@ export default function Navbar() {
                         </Link>
                       ))}
                     </div>
-                  )}
+                  </div>
                 </div>
               ) : (
                 <Link

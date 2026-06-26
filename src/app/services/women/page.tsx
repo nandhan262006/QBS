@@ -1,129 +1,270 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Waves, Sun, Heart, Palette, Scissors, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 
 const womenServices = [
   {
-    icon: Waves,
-    title: "Waxing",
+    title: "Threading Services",
+    desc: "Professional threading services for perfectly shaped eyebrows and smooth facial hair removal.",
     items: [
+      "Eyebrows Threading",
+      "Upper Lip Threading",
+      "Chin Threading",
+      "Forehead Threading",
+      "Cheek Threading",
+      "Side Locks Threading",
+      "Full Face Threading",
+    ],
+    bg: "from-[#F3E8FF] to-[#8B5CF6]/20",
+  },
+  {
+    title: "Waxing Services",
+    desc: "Achieve silky smooth skin with our premium waxing treatments for all body areas.",
+    items: [
+      "Under Arms Waxing",
+      "Half Arms Waxing",
       "Full Arms Waxing",
+      "Half Legs Waxing",
       "Full Legs Waxing",
-      "Underarms Waxing",
-      "Face Waxing",
-      "Bikini Waxing",
+      "Upper Lip / Chin / Forehead",
+      "Full Face",
+      "Lower Back / Upper Back / Midriff",
+      "Bikini Wax",
+    ],
+    bg: "from-[#E0F7FA] to-[#26C6DA]/20",
+  },
+  {
+    title: "Haircuts & Styling",
+    desc: "Modern cuts and professional styling tailored to your face shape and lifestyle.",
+    items: [
+      "Hair Cut",
+      "Fringe Cut",
+      "Hair Wash",
+      "Blow Dry",
+      "Hair Ironing",
+      "Hair Crimping",
+    ],
+    bg: "from-[#FFF3E0] to-[#FF9800]/20",
+  },
+  {
+    title: "Hair Coloring",
+    desc: "Transform your look with premium coloring, highlights and fashion shades.",
+    items: [
+      "Henna Application",
+      "Henna Application with Blast Dry",
+      "BB Coloring",
+      "Global Coloring",
+      "Root Touch-up",
+      "Regular Global Coloring",
+    ],
+    bg: "from-[#E8F5E9] to-[#4CAF50]/20",
+  },
+  {
+    title: "Hair Spa & Head Massage",
+    desc: "Deep nourishment and rejuvenation treatments for healthy, shiny hair.",
+    items: [
+      "Hair Spa",
+      "Nashi Hair Spa",
+      "Shea Hair Spa",
+      "Deep Conditioning Therapy",
+      "Pure Coconut Nourisher",
+      "Olive Bliss",
+      "Almond Indulgence",
+      "Jojaba Menthol Chiller",
+    ],
+    bg: "from-[#FCE4EC] to-[#E91E63]/20",
+  },
+  {
+    title: "Hair & Scalp Treatments",
+    desc: "Advanced solutions for damaged, frizzy and chemically treated hair.",
+    items: [
+      "Nutritive Treatment",
+      "Normal to Dull Hair Treatment",
+      "Absolut Repair Treatment",
+      "Intense Smoothening Treatment",
+      "Colour Radiance Treatment",
+      "Hair Fall Treatment",
+      "Dandruff Treatment",
+      "Lice Treatment",
+    ],
+    bg: "from-[#F3E5F5] to-[#9C27B0]/20",
+  },
+  {
+    title: "Pedicure & Manicure",
+    desc: "Luxury hand and foot care treatments for beautiful and healthy nails.",
+    items: [
+      "Regular Pedicure",
+      "Foot Massage",
+      "Chocolate Foot Spa",
+      "Crystal Crush Pedicure",
+      "Bomb Pedi",
+      "Premium Pedicure",
+      "Heel Peel Treatment",
+      "Regular Manicure",
+      "Full Arms Massage",
       "Body Polishing",
     ],
+    bg: "from-[#E3F2FD] to-[#2196F3]/20",
   },
   {
-    icon: Sun,
-    title: "Facials",
+    title: "Skin Care Treatments",
+    desc: "Professional skin rejuvenation treatments for glowing and healthy skin.",
     items: [
-      "Hand-On Facial",
-      "Electrotherapy Facial",
-      "Clean Up",
-      "Anti Ageing Facial",
-      "Glow & Radiance Facial",
-      "Normal Facial Wash",
+      "Face Detan",
+      "Neck Detan",
+      "Full Arms Detan",
+      "Full Legs Detan",
+      "Full Body Detan",
+      "Face Clean Up",
+      "Tan Clean Up",
+      "Radiance Cleanup",
     ],
+    bg: "from-[#FFF8E1] to-[#FFC107]/20",
   },
   {
-    icon: Heart,
-    title: "Spa",
+    title: "Facial Treatments",
+    desc: "Customized facial therapies designed to improve skin texture and radiance.",
     items: [
-      "Aroma Therapy",
-      "Body Spa",
-      "Relaxation Therapy",
-      "Stress Relief Session",
-      "Skin Nourishing Spa",
-      "Wellness Treatment",
+      "Fruit Facial",
+      "Papaya Facial",
+      "Pearl Facial",
+      "Oxygen Facial",
+      "24 Karat Gold Facial",
+      "Bright Back Facial",
+      "Collagen Facial",
+      "Brightening Facial",
+      "Hydra 15 In One",
     ],
+    bg: "from-[#EDE7F6] to-[#673AB7]/20",
   },
   {
-    icon: Heart,
-    title: "Massage",
+    title: "Korean Facials",
+    desc: "Trending Korean skincare therapies for flawless, radiant and youthful skin.",
     items: [
-      "Head Massage",
-      "Neck & Shoulder Massage",
-      "Deep Tissue Massage",
-      "Full Body Massage",
-      "Foot Reflexology",
-      "Relaxation Massage",
+      "Korean Glow Facial",
+      "Hydra Facial",
+      "Ultra Lightening Facial",
+      "Glass Skin Treatment",
+      "Skin Rejuvenation",
+      "Korean Brightening Therapy",
     ],
+    bg: "from-[#FBE9E7] to-[#FF5722]/20",
   },
   {
-    icon: Palette,
-    title: "Makeup",
+    title: "Nail Enhancements",
+    desc: "Stylish nail extensions and creative nail art for every occasion.",
     items: [
-      "Bridal Makeup",
+      "Acrylic Extensions",
+      "Gel X Extensions",
+      "Gel Extensions",
+      "Inbuild Acrylic Extension",
+      "Ombre Extension",
+      "Soft Tip Extension",
+      "Nail Art",
+    ],
+    bg: "from-[#E0F2F1] to-[#009688]/20",
+  },
+  {
+    title: "Bridal Makeup",
+    desc: "Complete bridal beauty solutions with makeup, hairstyling and pre-bridal packages.",
+    items: [
       "Engagement Makeup",
-      "Party Makeup",
+      "Bridal Makeup",
       "Reception Makeup",
-      "HD Makeup",
-      "Airbrush Makeup",
+      "Party Makeup",
+      "Hair Styling",
+      "Saree Draping",
+      "Trail Makeup",
     ],
-  },
-  {
-    icon: Scissors,
-    title: "Hair",
-    items: [
-      "Hair Cut & Styling",
-      "Hair Coloring",
-      "Hair Smoothening",
-      "Keratin Treatment",
-      "Hair Spa",
-      "Hair Straightening",
-    ],
+    bg: "from-[#FFFDE7] to-[#FFEB3B]/20",
   },
 ];
+
+function encodeWhatsApp(text: string) {
+  return text
+    .replace(/['"]/g, "")
+    .replace(/&/g, "and")
+    .split(" ")
+    .filter(Boolean)
+    .join("%20");
+}
 
 export default function WomenServicesPage() {
   return (
     <>
       <Navbar />
       <main className="pt-20">
-        <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-[#F3E8FF]/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 font-[family-name:var(--font-playfair)] mb-4">
-                Women Services
-              </h1>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Complete beauty and grooming services tailored for women.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {womenServices.map((service) => {
-                const Icon = service.icon;
-                return (
-                  <div
-                    key={service.title}
-                    className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg hover:shadow-[#8B5CF6]/5 transition-all"
-                  >
-                    <div className="w-14 h-14 rounded-2xl bg-[#F3E8FF] flex items-center justify-center mb-5">
-                      <Icon className="w-7 h-7 text-[#652D91]" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                      {service.title}
-                    </h3>
-                    <ul className="space-y-2">
-                      {service.items.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-center gap-2 text-gray-600 text-sm"
-                        >
-                          <Sparkles className="w-3 h-3 text-[#8B5CF6]" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
+        <section className="relative py-16 bg-gradient-to-br from-gray-50 via-white to-[#F3E8FF]/30 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <nav className="text-sm text-gray-500 mb-4">
+              <a href="/" className="hover:text-[#652D91] transition-colors">
+                Home
+              </a>
+              <span className="mx-2">/</span>
+              <span className="text-[#652D91] font-medium">Women</span>
+            </nav>
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 font-[family-name:var(--font-playfair)] mb-4">
+              Services
+            </h1>
           </div>
         </section>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+          {womenServices.map((service, i) => (
+            <div
+              key={service.title}
+              className="flex flex-col lg:flex-row gap-8 items-center py-16 border-b border-gray-100 last:border-b-0"
+            >
+              <div
+                className={`w-full lg:w-1/2 ${
+                  i % 2 === 1 ? "lg:order-2" : ""
+                }`}
+              >
+                <div
+                  className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${service.bg} overflow-hidden flex items-center justify-center`}
+                >
+                  <div className="text-center p-8">
+                    <span className="text-7xl font-bold text-[#652D91]/20 font-[family-name:var(--font-playfair)]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className={`w-full lg:w-1/2 space-y-5 ${
+                  i % 2 === 1 ? "lg:order-1" : ""
+                }`}
+              >
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 font-[family-name:var(--font-playfair)]">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{service.desc}</p>
+
+                <ul className="grid grid-cols-2 gap-2">
+                  {service.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 text-gray-700 text-sm"
+                    >
+                      <Check className="w-4 h-4 text-[#8B5CF6] flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={`https://wa.me/919848609996?text=Hi%20QBS%20Salon,%20I%20want%20to%20book%20${encodeWhatsApp(service.title)}.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#652D91] text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-[#50287A] transition-colors"
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </main>
       <Footer />
     </>
