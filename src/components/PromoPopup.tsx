@@ -18,8 +18,10 @@ export default function PromoPopup() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    const alreadyShown = sessionStorage.getItem("promoShown");
-    if (alreadyShown) return;
+    try {
+      const alreadyShown = sessionStorage.getItem("promoShown");
+      if (alreadyShown) return;
+    } catch {}
 
     const id = setTimeout(() => setShow(true), 25000);
     return () => clearTimeout(id);
