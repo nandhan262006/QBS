@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Check } from "lucide-react";
@@ -28,12 +29,13 @@ export default function AboutPage() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-[#F3E8FF] to-[#8B5CF6]/20 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <span className="text-6xl font-bold text-[#652D91] font-[family-name:var(--font-playfair)]">
-                    Since 2015
-                  </span>
-                </div>
+              <div className="aspect-square rounded-2xl overflow-hidden relative">
+                <Image
+                  src="/bride.jpg"
+                  alt="QBS Salon Bride"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               <div className="space-y-6">
