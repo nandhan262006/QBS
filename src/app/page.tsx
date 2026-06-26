@@ -5,7 +5,6 @@ import Services from "@/components/Services";
 import Features from "@/components/Features";
 import Gallery from "@/components/Gallery";
 import Appointment from "@/components/Appointment";
-import Testimonials from "@/components/Testimonials";
 import FranchiseCTA from "@/components/FranchiseCTA";
 import Footer from "@/components/Footer";
 
@@ -20,7 +19,6 @@ export default function Home() {
         <Features />
         <Gallery />
         <Appointment />
-        <Testimonials />
         <FranchiseCTA />
       </main>
       <Footer />

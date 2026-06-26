@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { Waves, Sun, Heart, Palette, Scissors, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   {
     icon: Waves,
     label: "Waxing",
     desc: "Smooth & hair-free skin",
+    image: "/images/services/waxing.webp",
     items: [
       "Full Arms Waxing",
       "Full Legs Waxing",
@@ -23,6 +25,7 @@ const services = [
     icon: Sun,
     label: "Facial",
     desc: "Glowing & refreshed skin",
+    image: "/images/services/facial.webp",
     items: [
       "Hand-On Facial",
       "Electrotherapy Facial",
@@ -38,6 +41,7 @@ const services = [
     icon: Heart,
     label: "Spa",
     desc: "Relax & rejuvenate",
+    image: "/images/services/hairspa.jpg",
     items: [
       "Aroma Therapy",
       "Body Spa",
@@ -53,6 +57,7 @@ const services = [
     icon: Heart,
     label: "Massage",
     desc: "Release tension",
+    image: "/images/services/treatment.jpg",
     items: [
       "Head Massage",
       "Neck & Shoulder Massage",
@@ -68,6 +73,7 @@ const services = [
     icon: Palette,
     label: "Makeup",
     desc: "Flawless looks",
+    image: "/images/services/bridal.png",
     items: [
       "Bridal Makeup",
       "Engagement Makeup",
@@ -83,6 +89,7 @@ const services = [
     icon: Scissors,
     label: "Hair",
     desc: "Style & care",
+    image: "/images/services/haircut.webp",
     items: [
       "Hair Cut & Styling",
       "Hair Coloring",
@@ -181,6 +188,14 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
+            </div>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src={activeService.image}
+                alt={activeService.label}
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>

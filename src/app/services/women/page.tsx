@@ -1,11 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import { Check } from "lucide-react";
 
 const womenServices = [
   {
     title: "Threading Services",
     desc: "Professional threading services for perfectly shaped eyebrows and smooth facial hair removal.",
+    image: "/images/services/threading.jpg",
     items: [
       "Eyebrows Threading",
       "Upper Lip Threading",
@@ -20,6 +22,7 @@ const womenServices = [
   {
     title: "Waxing Services",
     desc: "Achieve silky smooth skin with our premium waxing treatments for all body areas.",
+    image: "/images/services/waxing.webp",
     items: [
       "Under Arms Waxing",
       "Half Arms Waxing",
@@ -36,6 +39,7 @@ const womenServices = [
   {
     title: "Haircuts & Styling",
     desc: "Modern cuts and professional styling tailored to your face shape and lifestyle.",
+    image: "/images/services/haircut.webp",
     items: [
       "Hair Cut",
       "Fringe Cut",
@@ -49,6 +53,7 @@ const womenServices = [
   {
     title: "Hair Coloring",
     desc: "Transform your look with premium coloring, highlights and fashion shades.",
+    image: "/images/services/coloring.avif",
     items: [
       "Henna Application",
       "Henna Application with Blast Dry",
@@ -62,6 +67,7 @@ const womenServices = [
   {
     title: "Hair Spa & Head Massage",
     desc: "Deep nourishment and rejuvenation treatments for healthy, shiny hair.",
+    image: "/images/services/hairspa.jpg",
     items: [
       "Hair Spa",
       "Nashi Hair Spa",
@@ -77,6 +83,7 @@ const womenServices = [
   {
     title: "Hair & Scalp Treatments",
     desc: "Advanced solutions for damaged, frizzy and chemically treated hair.",
+    image: "/images/services/treatment.jpg",
     items: [
       "Nutritive Treatment",
       "Normal to Dull Hair Treatment",
@@ -92,6 +99,7 @@ const womenServices = [
   {
     title: "Pedicure & Manicure",
     desc: "Luxury hand and foot care treatments for beautiful and healthy nails.",
+    image: "/images/services/pedicure.webp",
     items: [
       "Regular Pedicure",
       "Foot Massage",
@@ -109,6 +117,7 @@ const womenServices = [
   {
     title: "Skin Care Treatments",
     desc: "Professional skin rejuvenation treatments for glowing and healthy skin.",
+    image: "/images/services/skincare.jpg",
     items: [
       "Face Detan",
       "Neck Detan",
@@ -124,6 +133,7 @@ const womenServices = [
   {
     title: "Facial Treatments",
     desc: "Customized facial therapies designed to improve skin texture and radiance.",
+    image: "/images/services/facial.webp",
     items: [
       "Fruit Facial",
       "Papaya Facial",
@@ -140,6 +150,7 @@ const womenServices = [
   {
     title: "Korean Facials",
     desc: "Trending Korean skincare therapies for flawless, radiant and youthful skin.",
+    image: "/images/services/korean-facial.jpg",
     items: [
       "Korean Glow Facial",
       "Hydra Facial",
@@ -153,6 +164,7 @@ const womenServices = [
   {
     title: "Nail Enhancements",
     desc: "Stylish nail extensions and creative nail art for every occasion.",
+    image: "/images/services/nails.webp",
     items: [
       "Acrylic Extensions",
       "Gel X Extensions",
@@ -167,6 +179,7 @@ const womenServices = [
   {
     title: "Bridal Makeup",
     desc: "Complete bridal beauty solutions with makeup, hairstyling and pre-bridal packages.",
+    image: "/images/services/bridal.png",
     items: [
       "Engagement Makeup",
       "Bridal Makeup",
@@ -220,14 +233,17 @@ export default function WomenServicesPage() {
                   i % 2 === 1 ? "lg:order-2" : ""
                 }`}
               >
-                <div
-                  className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${service.bg} overflow-hidden flex items-center justify-center`}
-                >
-                  <div className="text-center p-8">
-                    <span className="text-7xl font-bold text-[#652D91]/20 font-[family-name:var(--font-playfair)]">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <span className="absolute bottom-4 left-4 text-4xl font-bold text-white/40 font-[family-name:var(--font-playfair)]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
               </div>
 

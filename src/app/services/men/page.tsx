@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import { Check } from "lucide-react";
 
 const menServices = [
@@ -17,7 +18,7 @@ const menServices = [
       "Hair Ironing",
       "Blow Dry Styling",
     ],
-    image: "",
+    image: "/images/services/mens-haircut.jpg",
     bg: "from-[#F3E8FF] to-[#8B5CF6]/20",
   },
   {
@@ -35,7 +36,7 @@ const menServices = [
       "Henna Colouring",
       "BB Colouring",
     ],
-    image: "",
+    image: "/images/services/mens-hair-color.jpg",
     bg: "from-[#E0F7FA] to-[#26C6DA]/20",
   },
   {
@@ -49,7 +50,7 @@ const menServices = [
       "Pre-Wedding Photoshoot",
       "Event Styling",
     ],
-    image: "",
+    image: "/images/services/mens-makeover.avif",
     bg: "from-[#FFF3E0] to-[#FF9800]/20",
   },
   {
@@ -68,7 +69,7 @@ const menServices = [
       "Full Arms Massage",
       "Body Polishing",
     ],
-    image: "",
+    image: "/images/services/mens-bodycare.webp",
     bg: "from-[#E8F5E9] to-[#4CAF50]/20",
   },
   {
@@ -84,7 +85,7 @@ const menServices = [
       "Anti-Aging Facial",
       "Collagen Facial",
     ],
-    image: "",
+    image: "/images/services/mens-facial.jpg",
     bg: "from-[#FCE4EC] to-[#E91E63]/20",
   },
   {
@@ -100,7 +101,7 @@ const menServices = [
       "Acne Skin Treatment",
       "Pigmented Skin Treatment",
     ],
-    image: "",
+    image: "/images/services/mens-korean-facial.jpg",
     bg: "from-[#F3E5F5] to-[#9C27B0]/20",
   },
   {
@@ -117,7 +118,7 @@ const menServices = [
       "Tan Cleanup",
       "Radiance Cleanup",
     ],
-    image: "",
+    image: "/images/services/mens-cleanup.webp",
     bg: "from-[#E3F2FD] to-[#2196F3]/20",
   },
   {
@@ -134,7 +135,7 @@ const menServices = [
       "Keratin Treatment",
       "Straightening & Smoothening",
     ],
-    image: "",
+    image: "/images/services/mens-hairspa.avif",
     bg: "from-[#FFF8E1] to-[#FFC107]/20",
   },
   {
@@ -147,7 +148,7 @@ const menServices = [
       "Pigmented Skin Facial",
       "Oily Skin Facial",
     ],
-    image: "",
+    image: "/images/services/mens-bal-facial.webp",
     bg: "from-[#EDE7F6] to-[#673AB7]/20",
   },
 ];
@@ -192,14 +193,17 @@ export default function MenServicesPage() {
                   i % 2 === 1 ? "lg:order-2" : ""
                 }`}
               >
-                <div
-                  className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${service.bg} overflow-hidden flex items-center justify-center`}
-                >
-                  <div className="text-center p-8">
-                    <span className="text-7xl font-bold text-[#652D91]/20 font-[family-name:var(--font-playfair)]">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <span className="absolute bottom-4 left-4 text-4xl font-bold text-white/40 font-[family-name:var(--font-playfair)]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
               </div>
 
