@@ -14,6 +14,17 @@ const branches = [
 
 export default function Appointment() {
   const [tab, setTab] = useState<"appointment" | "franchise">("appointment");
+  const [service, setService] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [date, setDate] = useState("");
+  const [branch, setBranch] = useState("");
+
+  const handleAppointment = (e: React.FormEvent) => {
+    e.preventDefault();
+    const text = `Hi QBS Salon, I want to book an appointment.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ADate: ${encodeURIComponent(date)}%0AService: ${encodeURIComponent(service)}%0ABranch: ${encodeURIComponent(branch)}`;
+    window.open(`https://wa.me/919848609996?text=${text}`, "_blank");
+  };
 
   return (
     <section className="py-24 bg-gradient-to-br from-[#1A0F2E] to-[#2D1B4E] relative overflow-hidden">
@@ -88,12 +99,17 @@ export default function Appointment() {
             </div>
 
             {tab === "appointment" ? (
-              <form className="space-y-4">
+              <form onSubmit={handleAppointment} className="space-y-4">
                 <div>
                   <label className="block text-sm text-gray-400 mb-1.5">
                     Select Services
                   </label>
-                  <select className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#8B5CF6]">
+                  <select
+                    value={service}
+                    onChange={(e) => setService(e.target.value)}
+                    required
+                    className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#8B5CF6]"
+                  >
                     <option value="" className="bg-[#2D1B4E]">
                       Choose a service
                     </option>
@@ -121,20 +137,34 @@ export default function Appointment() {
                   <input
                     type="text"
                     placeholder="Your Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
                     className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-gray-500 focus:outline-none focus:border-[#8B5CF6]"
                   />
                   <input
                     type="tel"
                     placeholder="Phone Number"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
                     className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-gray-500 focus:outline-none focus:border-[#8B5CF6]"
                   />
                 </div>
                 <input
                   type="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  required
                   className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#8B5CF6] [color-scheme:dark]"
                 />
                 <div>
-                  <select className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#8B5CF6]">
+                  <select
+                    value={branch}
+                    onChange={(e) => setBranch(e.target.value)}
+                    required
+                    className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#8B5CF6]"
+                  >
                     <option value="" className="bg-[#2D1B4E]">
                       Select Branch
                     </option>
