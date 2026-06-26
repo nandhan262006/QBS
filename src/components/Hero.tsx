@@ -10,6 +10,7 @@ const slides = [
   { desktop: "/kandukuru.png", mobile: "/kandukuruM.png", alt: "QBS Salon Kandukuru" },
   { desktop: "/benzcircle.png", mobile: "/benzcircleM.png", alt: "QBS Salon Benz Circle" },
   { desktop: "/homepagelaptop.png", mobile: "/HOMEPAGE.png", alt: "QBS Salon Homepage" },
+  { desktop: "/homepagelaptop2.png", mobile: "/HOMEPAGE.png", alt: "QBS Salon Homepage 2" },
 ];
 
 export default function Hero() {
